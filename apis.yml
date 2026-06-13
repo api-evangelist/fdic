@@ -1,0 +1,74 @@
+aid: fdic
+name: FDIC
+description: >
+  The Federal Deposit Insurance Corporation (FDIC) provides the BankFind Suite
+  REST API, offering developers programmatic access to publicly available data on
+  FDIC-insured financial institutions. The API enables searching, filtering, and
+  downloading information about bank institutions, branch locations, financial
+  reports, structure change history, failed banks, and summary deposit data.
+  All data is provided free of charge under the U.S. public domain license.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/fdic/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Banking
+  - Finance
+  - Government
+  - FDIC
+  - Financial Data
+  - Bank Data
+  - Regulatory
+apis:
+  - aid: fdic:bankfind
+    name: FDIC BankFind Suite API
+    description: >
+      The FDIC BankFind Suite API (Beta) provides programmatic access to public
+      data on FDIC-insured financial institutions, including institution
+      demographics and location data, branch office locations, quarterly financial
+      information, historical structure change events, failed institution records
+      dating from 1934 to present, Summary of Deposits data, and aggregate
+      financial summaries subtotaled by year. The API uses Elasticsearch query
+      string syntax for flexible filtering and supports JSON and CSV output
+      formats with pagination up to 10,000 records per request.
+    humanURL: https://banks.data.fdic.gov/bankfind-suite
+    baseURL: https://api.fdic.gov/banks
+    tags:
+      - Banking
+      - Financial Institutions
+      - Bank Data
+      - Branch Locations
+      - Financial Reports
+      - Failed Banks
+      - Deposits
+    properties:
+      - type: Documentation
+        url: https://api.fdic.gov/banks/docs
+      - type: OpenAPI
+        url: https://api.fdic.gov/banks/docs/swagger.yaml
+common:
+  - type: Website
+    url: https://www.fdic.gov/
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+  - type: GitHubOrg
+    url: https://github.com/fdic-gov
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/fdic/
+  - type: Blog
+    url: https://www.fdic.gov/news
+  - type: Pricing
+    url: https://api.fdic.gov/banks/docs
+  - type: X
+    url: https://x.com/FDICgov
+  - type: Plans
+    url: plans/fdic-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/fdic-rate-limits.yml
+  - type: FinOps
+    url: finops/fdic-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

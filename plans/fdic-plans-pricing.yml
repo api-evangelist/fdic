@@ -1,0 +1,24 @@
+name: FDIC BankFind API Plans and Pricing
+description: Pricing and access plans for the FDIC BankFind Suite API.
+url: https://api.fdic.gov/banks/docs
+plans:
+  - name: Free Public Access
+    description: >
+      The FDIC BankFind Suite API is a free, publicly available service provided
+      by the Federal Deposit Insurance Corporation. No registration or API key is
+      required to begin querying, though API key support exists for future
+      authentication use. As a U.S. government data service, all data is in the
+      public domain under https://www.usa.gov/publicdomain/label/1.0/.
+    url: https://api.fdic.gov/banks/docs
+    price: 0
+    currency: USD
+    unit: request
+    rateLimit: unknown
+    authentication: optional_api_key
+    features:
+      - Access to all eight BankFind API endpoints
+      - JSON and CSV output formats
+      - Up to 10,000 records per request
+      - Pagination support
+      - Elasticsearch query string filtering
+      - Bulk data download available

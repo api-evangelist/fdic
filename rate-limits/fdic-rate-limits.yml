@@ -1,0 +1,26 @@
+name: FDIC BankFind API Rate Limits
+description: Rate limit policies for the FDIC BankFind Suite API.
+url: https://api.fdic.gov/banks/docs
+rateLimits:
+  - name: Default Rate Limit
+    description: >
+      The FDIC BankFind Suite API does not publish explicit rate limit thresholds
+      in its OpenAPI specification or public documentation. As a U.S. federal
+      government API serving public data, reasonable use is expected. The API
+      supports up to 10,000 records per request using the limit parameter and
+      provides pagination via offset to retrieve large datasets without hitting
+      per-request caps.
+    limit: unknown
+    period: unknown
+    unit: requests
+    notes: >
+      Contact PublicDataFeedback@fdic.gov or ChiefDataOfficer@fdic.gov for
+      questions about acceptable use and rate limit policies. Bulk data downloads
+      are available at https://banks.data.fdic.gov/bankfind-suite/bulkData for
+      large dataset needs.
+  - name: Records Per Request
+    description: Maximum number of records returned in a single API call.
+    limit: 10000
+    period: per_request
+    unit: records
+    notes: Default is 10 records per request; maximum is 10,000.

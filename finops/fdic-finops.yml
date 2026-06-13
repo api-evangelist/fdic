@@ -1,0 +1,31 @@
+name: FDIC BankFind API FinOps
+description: Financial operations and cost management for the FDIC BankFind Suite API.
+url: https://api.fdic.gov/banks/docs
+finops:
+  cost: 0
+  currency: USD
+  model: free_public
+  description: >
+    The FDIC BankFind Suite API is provided free of charge by the U.S. federal
+    government. There are no subscription fees, per-request charges, or data
+    access costs. All data is released under the U.S. public domain license.
+    Organizations using this API have zero direct API spend; the primary cost
+    consideration is internal engineering time for integration and maintenance.
+  considerations:
+    - name: Zero Direct Cost
+      description: No fees for API access at any usage volume.
+    - name: Engineering Integration Cost
+      description: >
+        Budget for developer time to build and maintain integrations against the
+        BankFind REST API. The API provides an OpenAPI/Swagger specification at
+        https://api.fdic.gov/banks/docs/swagger.yaml to accelerate integration.
+    - name: Bulk Data Alternative
+      description: >
+        For high-volume data needs, the FDIC offers bulk data file downloads at
+        https://banks.data.fdic.gov/bankfind-suite/bulkData, which may reduce
+        repeated API call overhead.
+    - name: Data Freshness
+      description: >
+        Financial report data is updated quarterly following FFIEC Call Report
+        filing cycles. Factor data refresh cadences into pipeline scheduling.
+  contact: PublicDataFeedback@fdic.gov
