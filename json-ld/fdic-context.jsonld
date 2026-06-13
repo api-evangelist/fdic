@@ -1,0 +1,199 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "fdic": "https://api.fdic.gov/banks/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "FinancialInstitution": "fdic:FinancialInstitution",
+    "BankBranch": "fdic:BankBranch",
+    "BankFailure": "fdic:BankFailure",
+    "FinancialReport": "fdic:FinancialReport",
+    "StructureChangeEvent": "fdic:StructureChangeEvent",
+    "SummaryOfDeposits": "fdic:SummaryOfDeposits",
+
+    "CERT": {
+      "@id": "fdic:certificateNumber",
+      "@type": "xsd:integer"
+    },
+    "NAME": {
+      "@id": "schema:legalName",
+      "@type": "xsd:string"
+    },
+    "CITY": {
+      "@id": "schema:addressLocality",
+      "@type": "xsd:string"
+    },
+    "STNAME": {
+      "@id": "schema:addressRegion",
+      "@type": "xsd:string"
+    },
+    "STALP": {
+      "@id": "fdic:stateAbbreviation",
+      "@type": "xsd:string"
+    },
+    "ZIP": {
+      "@id": "schema:postalCode",
+      "@type": "xsd:string"
+    },
+    "COUNTY": {
+      "@id": "fdic:county",
+      "@type": "xsd:string"
+    },
+    "ACTIVE": {
+      "@id": "fdic:activeStatus",
+      "@type": "xsd:integer"
+    },
+    "ASSET": {
+      "@id": "fdic:totalAssets",
+      "@type": "xsd:decimal"
+    },
+    "DEP": {
+      "@id": "fdic:totalDeposits",
+      "@type": "xsd:decimal"
+    },
+    "DEPDOM": {
+      "@id": "fdic:domesticDeposits",
+      "@type": "xsd:decimal"
+    },
+    "NETINC": {
+      "@id": "fdic:netIncome",
+      "@type": "xsd:decimal"
+    },
+    "ROE": {
+      "@id": "fdic:returnOnEquity",
+      "@type": "xsd:decimal"
+    },
+    "ROA": {
+      "@id": "fdic:returnOnAssets",
+      "@type": "xsd:decimal"
+    },
+    "OFFICES": {
+      "@id": "fdic:totalOffices",
+      "@type": "xsd:integer"
+    },
+    "OFFDOM": {
+      "@id": "fdic:domesticOffices",
+      "@type": "xsd:integer"
+    },
+    "CBSA": {
+      "@id": "fdic:coreBasedStatisticalArea",
+      "@type": "xsd:string"
+    },
+    "DATEUPDT": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:date"
+    },
+    "UNINUM": {
+      "@id": "fdic:uniqueNumber",
+      "@type": "xsd:integer"
+    },
+    "OFFNUM": {
+      "@id": "fdic:officeNumber",
+      "@type": "xsd:integer"
+    },
+    "SERVTYPE": {
+      "@id": "fdic:serviceType",
+      "@type": "xsd:integer"
+    },
+    "RUNDATE": {
+      "@id": "fdic:runDate",
+      "@type": "xsd:date"
+    },
+    "FAILDATE": {
+      "@id": "fdic:failureDate",
+      "@type": "xsd:date"
+    },
+    "FAILYR": {
+      "@id": "fdic:failureYear",
+      "@type": "xsd:integer"
+    },
+    "FIN": {
+      "@id": "fdic:failureIdentificationNumber",
+      "@type": "xsd:string"
+    },
+    "CITYST": {
+      "@id": "fdic:cityState",
+      "@type": "xsd:string"
+    },
+    "SAVR": {
+      "@id": "fdic:supervisoryAgency",
+      "@type": "xsd:string"
+    },
+    "RESTYPE": {
+      "@id": "fdic:resolutionType",
+      "@type": "xsd:string"
+    },
+    "RESTYPE1": {
+      "@id": "fdic:resolutionTypeSecondary",
+      "@type": "xsd:string"
+    },
+    "QBFDEP": {
+      "@id": "fdic:estimatedInsuredDepositsAtFailure",
+      "@type": "xsd:decimal"
+    },
+    "QBFASSET": {
+      "@id": "fdic:totalAssetsAtFailure",
+      "@type": "xsd:decimal"
+    },
+    "COST": {
+      "@id": "fdic:estimatedLossToDIF",
+      "@type": "xsd:decimal"
+    },
+    "REPDTE": {
+      "@id": "fdic:reportDate",
+      "@type": "xsd:string"
+    },
+    "INTINC": {
+      "@id": "fdic:totalInterestIncome",
+      "@type": "xsd:decimal"
+    },
+    "EINTEXP": {
+      "@id": "fdic:totalInterestExpense",
+      "@type": "xsd:decimal"
+    },
+    "NIM": {
+      "@id": "fdic:netInterestMargin",
+      "@type": "xsd:decimal"
+    },
+    "NONII": {
+      "@id": "fdic:noninterestIncome",
+      "@type": "xsd:decimal"
+    },
+    "NONIX": {
+      "@id": "fdic:noninterestExpense",
+      "@type": "xsd:decimal"
+    },
+    "ITAX": {
+      "@id": "fdic:incomeTaxes",
+      "@type": "xsd:decimal"
+    },
+    "ITAXR": {
+      "@id": "fdic:incomeTaxRate",
+      "@type": "xsd:decimal"
+    },
+    "IGLSEC": {
+      "@id": "fdic:gainsLossesOnSecurities",
+      "@type": "xsd:decimal"
+    },
+    "EXTRA": {
+      "@id": "fdic:extraordinaryItems",
+      "@type": "xsd:decimal"
+    },
+    "PROCDATE": {
+      "@id": "fdic:processDate",
+      "@type": "xsd:date"
+    },
+    "YEAR": {
+      "@id": "fdic:reportingYear",
+      "@type": "xsd:integer"
+    },
+    "DEPSUMBR": {
+      "@id": "fdic:summaryOfDepositsBranch",
+      "@type": "xsd:decimal"
+    },
+    "STALPBR": {
+      "@id": "fdic:branchStateAbbreviation",
+      "@type": "xsd:string"
+    }
+  }
+}

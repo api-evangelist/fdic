@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fdic/main/json-schema/fdic-institution-schema.json",
+  "title": "FDIC Institution",
+  "description": "A financial institution record from the FDIC BankFind Suite API.",
+  "type": "object",
+  "properties": {
+    "CERT": {
+      "type": "integer",
+      "description": "FDIC certificate number uniquely identifying each institution."
+    },
+    "NAME": {
+      "type": "string",
+      "description": "The legal name of the financial institution."
+    },
+    "CITY": {
+      "type": "string",
+      "description": "City in which the institution's headquarters is located."
+    },
+    "STNAME": {
+      "type": "string",
+      "description": "Full name of the state in which the institution is headquartered."
+    },
+    "STALP": {
+      "type": "string",
+      "description": "Two-letter abbreviation of the state in which the institution is headquartered."
+    },
+    "ZIP": {
+      "type": "string",
+      "description": "ZIP code of the institution's headquarters."
+    },
+    "COUNTY": {
+      "type": "string",
+      "description": "County where the institution is headquartered."
+    },
+    "ACTIVE": {
+      "type": "integer",
+      "description": "Whether the institution is active (1) or not (0)."
+    },
+    "ASSET": {
+      "type": "number",
+      "description": "Total assets held by the institution (in thousands of dollars)."
+    },
+    "DEP": {
+      "type": "number",
+      "description": "Total deposits held by the institution (in thousands of dollars)."
+    },
+    "DEPDOM": {
+      "type": "number",
+      "description": "Domestic deposits (in thousands of dollars)."
+    },
+    "NETINC": {
+      "type": "number",
+      "description": "Net income of the institution (in thousands of dollars)."
+    },
+    "ROE": {
+      "type": "number",
+      "description": "Return on equity percentage."
+    },
+    "ROA": {
+      "type": "number",
+      "description": "Return on assets percentage."
+    },
+    "OFFICES": {
+      "type": "integer",
+      "description": "Number of offices/branches operated by the institution."
+    },
+    "OFFDOM": {
+      "type": "integer",
+      "description": "Number of domestic offices."
+    },
+    "CBSA": {
+      "type": "string",
+      "description": "Core Based Statistical Area name where the institution is located."
+    },
+    "DATEUPDT": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the record was last updated."
+    }
+  }
+}

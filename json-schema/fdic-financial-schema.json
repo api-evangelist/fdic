@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fdic/main/json-schema/fdic-financial-schema.json",
+  "title": "FDIC Financial Report",
+  "description": "Quarterly financial information for an FDIC-insured institution from the FDIC BankFind Suite API.",
+  "type": "object",
+  "properties": {
+    "CERT": {
+      "type": "integer",
+      "description": "FDIC certificate number uniquely identifying the institution."
+    },
+    "REPDTE": {
+      "type": "string",
+      "description": "Report date for the quarterly financial data (YYYYMMDD format)."
+    },
+    "ASSET": {
+      "type": "number",
+      "description": "Total assets (in thousands of dollars)."
+    },
+    "DEP": {
+      "type": "number",
+      "description": "Total deposits (in thousands of dollars)."
+    },
+    "INTINC": {
+      "type": "number",
+      "description": "Total interest income (in thousands of dollars)."
+    },
+    "EINTEXP": {
+      "type": "number",
+      "description": "Total interest expense (in thousands of dollars)."
+    },
+    "NIM": {
+      "type": "number",
+      "description": "Net interest margin."
+    },
+    "NONII": {
+      "type": "number",
+      "description": "Total noninterest income (in thousands of dollars)."
+    },
+    "NONIX": {
+      "type": "number",
+      "description": "Total noninterest expense (in thousands of dollars)."
+    },
+    "NETINC": {
+      "type": "number",
+      "description": "Net income (in thousands of dollars)."
+    },
+    "ROE": {
+      "type": "number",
+      "description": "Return on equity percentage."
+    },
+    "ROA": {
+      "type": "number",
+      "description": "Return on assets percentage."
+    }
+  }
+}

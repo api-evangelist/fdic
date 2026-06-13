@@ -1,0 +1,324 @@
+name: FDIC BankFind Suite Vocabulary
+description: >
+  Domain vocabulary for the FDIC BankFind Suite API, covering terms used in
+  financial institution records, branch locations, quarterly financials,
+  structure change history, failed bank records, and summary of deposits data.
+url: https://raw.githubusercontent.com/api-evangelist/fdic/main/vocabulary/fdic-vocabulary.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+terms:
+
+  - term: CERT
+    label: Certificate Number
+    description: >
+      The unique FDIC certificate number assigned to each insured financial
+      institution. Used as the primary key for identifying institutions across
+      all BankFind Suite endpoints.
+    type: integer
+
+  - term: ACTIVE
+    label: Active Status
+    description: >
+      Indicates whether the financial institution is currently active (1) or
+      inactive/closed (0).
+    type: integer
+    values:
+      - value: 1
+        label: Active
+      - value: 0
+        label: Inactive
+
+  - term: ASSET
+    label: Total Assets
+    description: >
+      Total assets held by the institution, denominated in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: CBSA
+    label: Core Based Statistical Area
+    description: >
+      The name of the Core Based Statistical Area (metropolitan or
+      micropolitan statistical area) in which the institution is located.
+    type: string
+
+  - term: CITY
+    label: City
+    description: >
+      City in which the institution's headquarters or branch office is located.
+    type: string
+
+  - term: COST
+    label: Estimated Loss to DIF
+    description: >
+      Estimated loss to the FDIC's Deposit Insurance Fund resulting from
+      resolution of a failed institution, denominated in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: COUNTY
+    label: County
+    description: >
+      County or county-equivalent in which the institution or branch is located.
+    type: string
+
+  - term: DATEUPDT
+    label: Last Updated Date
+    description: >
+      The date on which the institution record was most recently updated.
+    type: string
+    format: date
+
+  - term: DEP
+    label: Total Deposits
+    description: >
+      Total deposits held by the institution, denominated in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: DEPDOM
+    label: Domestic Deposits
+    description: >
+      Total domestic deposits held by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: DEPSUMBR
+    label: Summary of Deposits Branch Total
+    description: >
+      Summary of deposits for a branch location, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: EINTEXP
+    label: Interest Expense
+    description: >
+      Total interest expense incurred by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: FAILDATE
+    label: Failure Date
+    description: >
+      The date on which the financial institution failed and was closed by
+      its chartering authority or the FDIC.
+    type: string
+    format: date
+
+  - term: FAILYR
+    label: Failure Year
+    description: >
+      The year in which the financial institution failed.
+    type: integer
+
+  - term: FIN
+    label: Failure Identification Number
+    description: >
+      A unique identifier assigned by the FDIC to each bank failure event.
+    type: string
+
+  - term: IGLSEC
+    label: Gains/Losses on Securities
+    description: >
+      Realized gains and losses on investment securities, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: INTINC
+    label: Total Interest Income
+    description: >
+      Total interest and fee income earned by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: ITAX
+    label: Income Taxes
+    description: >
+      Income taxes incurred by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: ITAXR
+    label: Income Tax Rate
+    description: >
+      Effective income tax rate for the institution.
+    type: number
+
+  - term: NAME
+    label: Institution Name
+    description: >
+      The legal name of the financial institution or branch office.
+    type: string
+
+  - term: NETINC
+    label: Net Income
+    description: >
+      Net income (profit or loss) of the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: NIM
+    label: Net Interest Margin
+    description: >
+      Net interest margin — the difference between interest income and interest
+      expense as a percentage of average earning assets.
+    type: number
+    unit: percent
+
+  - term: NONII
+    label: Noninterest Income
+    description: >
+      Total noninterest income earned by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: NONIX
+    label: Noninterest Expense
+    description: >
+      Total noninterest expense incurred by the institution, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: OFFDOM
+    label: Domestic Offices
+    description: >
+      Number of domestic offices (branches) operated by the institution.
+    type: integer
+
+  - term: OFFNUM
+    label: Office Number
+    description: >
+      The branch office number assigned to a specific location.
+    type: integer
+
+  - term: OFFICES
+    label: Total Offices
+    description: >
+      Total number of offices (branches) operated by the institution, including
+      domestic and foreign offices.
+    type: integer
+
+  - term: PROCDATE
+    label: Process Date
+    description: >
+      The date on which a structure change event was processed by the FDIC.
+    type: string
+    format: date
+
+  - term: QBFASSET
+    label: Assets at Failure
+    description: >
+      Total assets of the institution at the time of failure, in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: QBFDEP
+    label: Deposits at Failure
+    description: >
+      Estimated insured deposits held by the institution at the time of failure,
+      in thousands of dollars.
+    type: number
+    unit: thousands of USD
+
+  - term: REPDTE
+    label: Report Date
+    description: >
+      The date of the quarterly financial report, expressed as YYYYMMDD.
+    type: string
+
+  - term: RESTYPE
+    label: Resolution Type
+    description: >
+      The primary method used to resolve a failed financial institution.
+    type: string
+    values:
+      - value: PAYOFF
+        label: Deposit Payoff
+      - value: P&A
+        label: Purchase and Assumption
+      - value: OA
+        label: Open Bank Assistance
+
+  - term: ROA
+    label: Return on Assets
+    description: >
+      Return on assets — net income as a percentage of average total assets.
+    type: number
+    unit: percent
+
+  - term: ROE
+    label: Return on Equity
+    description: >
+      Return on equity — net income as a percentage of average total equity capital.
+    type: number
+    unit: percent
+
+  - term: RUNDATE
+    label: Run Date
+    description: >
+      The date as of which branch location data is current.
+    type: string
+    format: date
+
+  - term: SAVR
+    label: Supervisory Agency
+    description: >
+      The federal or state supervisory agency responsible for the institution
+      at the time of failure.
+    type: string
+
+  - term: SERVTYPE
+    label: Service Type
+    description: >
+      Numeric code indicating the type of service provided at a branch office.
+    type: integer
+    values:
+      - value: 11
+        label: Full-Service Brick and Mortar
+      - value: 12
+        label: Full-Service Retail Store
+      - value: 13
+        label: Full-Service Cyber Office
+      - value: 14
+        label: Full-Service Mobile
+      - value: 21
+        label: Limited-Service Administrative
+      - value: 22
+        label: Limited-Service Drive-Through
+      - value: 23
+        label: Limited-Service Loan Production
+      - value: 24
+        label: Limited-Service Military
+      - value: 25
+        label: Limited-Service Seasonal
+
+  - term: STALP
+    label: State Abbreviation
+    description: >
+      Two-letter USPS abbreviation for the state in which the institution or
+      branch is located.
+    type: string
+
+  - term: STNAME
+    label: State Name
+    description: >
+      Full name of the state in which the institution or branch is located.
+    type: string
+
+  - term: UNINUM
+    label: Unique Number
+    description: >
+      A unique numeric identifier assigned to each branch office location by the FDIC.
+    type: integer
+
+  - term: YEAR
+    label: Year
+    description: >
+      Calendar year associated with annual summary or Summary of Deposits data.
+    type: integer
+
+  - term: ZIP
+    label: ZIP Code
+    description: >
+      Five-digit ZIP code of the institution headquarters or branch location.
+    type: string

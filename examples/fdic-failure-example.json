@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "total": 1,
+    "parameters": {
+      "filters": "FAILYR:[2014 TO 2015]",
+      "fields": "NAME,CERT,FIN,CITYST,FAILDATE,SAVR,RESTYPE,RESTYPE1,QBFDEP,QBFASSET,COST",
+      "limit": 1,
+      "offset": 0
+    }
+  },
+  "data": [
+    {
+      "data": {
+        "CERT": 57807,
+        "NAME": "VALLEY BANK",
+        "FIN": "10537",
+        "CITYST": "MOLINE, IL",
+        "FAILDATE": "2014-06-20",
+        "FAILYR": 2014,
+        "SAVR": "OCC",
+        "RESTYPE": "PAYOFF",
+        "RESTYPE1": "",
+        "QBFDEP": 76500,
+        "QBFASSET": 95900,
+        "COST": 6800
+      }
+    }
+  ],
+  "totals": {
+    "count": 1,
+    "QBFDEP": 76500,
+    "QBFASSET": 95900,
+    "COST": 6800
+  }
+}

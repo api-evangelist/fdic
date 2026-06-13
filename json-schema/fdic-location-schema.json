@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fdic/main/json-schema/fdic-location-schema.json",
+  "title": "FDIC Institution Location",
+  "description": "A branch office or location record for an FDIC-insured financial institution.",
+  "type": "object",
+  "properties": {
+    "CERT": {
+      "type": "integer",
+      "description": "FDIC certificate number of the parent institution."
+    },
+    "NAME": {
+      "type": "string",
+      "description": "Name of the institution associated with this location."
+    },
+    "UNINUM": {
+      "type": "integer",
+      "description": "Unique numeric identifier for the branch office."
+    },
+    "OFFNUM": {
+      "type": "integer",
+      "description": "Office number assigned to this branch location."
+    },
+    "SERVTYPE": {
+      "type": "integer",
+      "description": "Service type code indicating the type of office (e.g., 11 = full-service brick and mortar)."
+    },
+    "CITY": {
+      "type": "string",
+      "description": "City where the branch is located."
+    },
+    "STNAME": {
+      "type": "string",
+      "description": "Full state name where the branch is located."
+    },
+    "STALP": {
+      "type": "string",
+      "description": "Two-letter state abbreviation where the branch is located."
+    },
+    "ZIP": {
+      "type": "string",
+      "description": "ZIP code of the branch location."
+    },
+    "COUNTY": {
+      "type": "string",
+      "description": "County where the branch is located."
+    },
+    "RUNDATE": {
+      "type": "string",
+      "format": "date",
+      "description": "Date as of which the branch data was current."
+    }
+  }
+}

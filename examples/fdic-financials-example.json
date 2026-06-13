@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "total": 1,
+    "parameters": {
+      "filters": "CERT:14",
+      "fields": "CERT,REPDTE,ASSET,DEP,INTINC,EINTEXP,NIM,NONII,NONIX,NETINC,ROE,ROA",
+      "limit": 1,
+      "offset": 0
+    }
+  },
+  "data": [
+    {
+      "data": {
+        "CERT": 14,
+        "REPDTE": "20230630",
+        "ASSET": 427500,
+        "DEP": 358000,
+        "INTINC": 6200,
+        "EINTEXP": 850,
+        "NIM": 3.85,
+        "NONII": 420,
+        "NONIX": 4100,
+        "NETINC": 1380,
+        "ROE": 9.14,
+        "ROA": 1.02
+      }
+    }
+  ]
+}

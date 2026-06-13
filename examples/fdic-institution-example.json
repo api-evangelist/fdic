@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "total": 1,
+    "parameters": {
+      "filters": "STALP:CA AND ACTIVE:1",
+      "fields": "CERT,NAME,CITY,STNAME,STALP,ZIP,ACTIVE,ASSET,DEP,NETINC,OFFICES",
+      "limit": 1,
+      "offset": 0
+    }
+  },
+  "data": [
+    {
+      "data": {
+        "CERT": 3511,
+        "NAME": "BANK OF AMERICA, NATIONAL ASSOCIATION",
+        "CITY": "CHARLOTTE",
+        "STNAME": "North Carolina",
+        "STALP": "NC",
+        "ZIP": "28255",
+        "COUNTY": "Mecklenburg",
+        "ACTIVE": 1,
+        "ASSET": 3180151000,
+        "DEP": 1905720000,
+        "DEPDOM": 1905720000,
+        "NETINC": 27528000,
+        "ROE": 8.93,
+        "ROA": 0.86,
+        "OFFICES": 3900,
+        "OFFDOM": 3900
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/fdic/main/json-schema/fdic-failure-schema.json",
+  "title": "FDIC Bank Failure",
+  "description": "A failed financial institution record from the FDIC BankFind Suite API, covering failures from 1934 to present.",
+  "type": "object",
+  "properties": {
+    "CERT": {
+      "type": "integer",
+      "description": "FDIC certificate number of the failed institution."
+    },
+    "NAME": {
+      "type": "string",
+      "description": "Legal name of the failed institution."
+    },
+    "FIN": {
+      "type": "string",
+      "description": "Failure identification number assigned by FDIC."
+    },
+    "CITYST": {
+      "type": "string",
+      "description": "City and state of the failed institution's headquarters."
+    },
+    "FAILDATE": {
+      "type": "string",
+      "format": "date",
+      "description": "Date on which the institution failed."
+    },
+    "FAILYR": {
+      "type": "integer",
+      "description": "Year in which the institution failed."
+    },
+    "SAVR": {
+      "type": "string",
+      "description": "Supervisory agency responsible for the institution at failure."
+    },
+    "RESTYPE": {
+      "type": "string",
+      "description": "Primary resolution type used to resolve the failed institution."
+    },
+    "RESTYPE1": {
+      "type": "string",
+      "description": "Secondary resolution type."
+    },
+    "QBFDEP": {
+      "type": "number",
+      "description": "Estimated insured deposits at failure (in thousands of dollars)."
+    },
+    "QBFASSET": {
+      "type": "number",
+      "description": "Total assets of the institution at failure (in thousands of dollars)."
+    },
+    "COST": {
+      "type": "number",
+      "description": "Estimated loss to the Deposit Insurance Fund (in thousands of dollars)."
+    }
+  }
+}
