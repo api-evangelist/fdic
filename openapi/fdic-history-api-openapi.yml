@@ -1,0 +1,212 @@
+openapi: 3.0.0
+info:
+  description: API to serve banking industry data to the public.
+  version: 0.1.0
+  title: FDIC Bank Data API (Beta) Demographics History API
+  contact:
+    email: PublicDataFeedback@fdic.gov
+servers:
+- description: API to serve banking industry data to the public.
+  url: /banks
+tags:
+- name: History
+  description: List of structure change events
+paths:
+  /history:
+    get:
+      tags:
+      - History
+      security:
+      - ApiKeyAuth: []
+      summary: Get Detail on Structure Change Events
+      operationId: getHistory
+      description: Returns details on structure change events
+      parameters:
+      - in: query
+        name: api_key
+        description: Api key used for api.fdic.gov
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: filters
+        description: "The filter criteria that refines the records returned. All values must be entered in UPPERCASE.\nExamples:\n* Filter by State\n`STATE:\"VIRGINIA\"`  \n* Filter all but a specified value  \n`!(STATE:\"VIRGINIA\")`  \n* Filter by Date Range\n`PROCDATE:[2020-01-01 TO 2020-02-01]`\n"
+        required: false
+        example: STATE:"VIRGINIA"
+        schema:
+          type: string
+      - in: query
+        name: search
+        description: 'Flexible text search against institution records
+
+          Search supports text search and fuzzy matching, as opposed to filters that are exact matches. All values must be entered in UPPERCASE.
+
+          Examples:
+
+          * Search by Name
+
+          `NAME: Island`
+
+          * Search by Name (fuzzy match)
+
+          `NAME: Iland`
+
+          * Search by State
+
+          `STATE: VA`
+
+          '
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: fields
+        description: Comma delimited list of fields of failed financial institutions to return. All values must be entered in UPPERCASE.
+        required: false
+        example: INSTNAME,CERT,PCITY,PSTALP,PZIP5
+        schema:
+          type: string
+      - in: query
+        name: sort_by
+        description: Field name by which to sort returned data
+        required: false
+        example: PROCDATE
+        schema:
+          type: string
+          default: PROCDATE
+      - in: query
+        name: sort_order
+        description: Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE.
+        required: false
+        example: DESC
+        schema:
+          type: string
+          default: ASC
+      - in: query
+        name: limit
+        description: The number of records to return. Default is 10 and maximum is 10,000.
+        required: false
+        example: 10
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 10000
+          default: 100
+      - in: query
+        name: offset
+        description: The offset of page to return.
+        required: false
+        example: 0
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+      - in: query
+        name: agg_by
+        description: The field by which data will be aggregated. All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: agg_term_fields
+        description: The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: agg_limit
+        description: The limit on how many aggregated results will be displayed
+        required: false
+        example: 10
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 10000
+          default: 10
+      - $ref: '#/components/parameters/fileFormat'
+      - $ref: '#/components/parameters/fileDownload'
+      - $ref: '#/components/parameters/fileName'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    $ref: '#/components/schemas/metadata'
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/history'
+                  totals:
+                    $ref: '#/components/schemas/totals'
+            text/csv:
+              schema:
+                type: string
+                format: csv
+        '400':
+          description: bad input parameter
+components:
+  schemas:
+    totals:
+      type: object
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count
+    history:
+      type: object
+      allOf:
+      - $ref: history_properties.yaml
+    metadata:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total query result count
+        parameters:
+          type: object
+          description: Query parameters supplied
+        index:
+          type: object
+          properties:
+            name:
+              type: string
+              description: name of index used to retrieve data
+            createTimestamp:
+              type: string
+              format: date-time
+              description: date/time index was created
+  parameters:
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv

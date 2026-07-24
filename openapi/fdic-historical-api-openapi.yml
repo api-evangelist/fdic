@@ -1,0 +1,196 @@
+openapi: 3.0.0
+info:
+  description: API to serve banking industry data to the public.
+  version: 0.1.0
+  title: FDIC Bank Data API (Beta) Demographics Historical API
+  contact:
+    email: PublicDataFeedback@fdic.gov
+servers:
+- description: API to serve banking industry data to the public.
+  url: /banks
+tags:
+- name: Historical
+  description: Historical data from 1934 onward regarding financial institutions.
+paths:
+  /summary:
+    get:
+      tags:
+      - Historical
+      security:
+      - ApiKeyAuth: []
+      summary: Get Historical Aggregate Data by Year
+      operationId: getHistorical
+      description: Returns aggregate financial and structure data, subtotaled by year, regarding finanical institutions.
+      parameters:
+      - in: query
+        name: api_key
+        description: Api key used for api.fdic.gov
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: filters
+        description: "The filter criteria that refines the records included in the calculated result. All values must be entered in UPPERCASE.\nexample: >-\nSTNAME:\"Alabama\" AND YEAR:2005\nExamples:\n* Filter by Community Banks (CB) vs. Savings Institutions (SI)  \n`CB_SI:CB`  \n* Filter by State name  \n`STNAME:\"Virginia\"`    \n* Filter all but a specified value  \n`!(STNAME:\"Virginia\")`  \n* Filter for any one of multiple State names  \n`STNAME:(\"West Virginia\",\"Delaware\")`    \n* Filter data by the year range  \n`YEAR:[\"2015\" TO \"2017\"]`\n"
+        required: false
+        example: STNAME:"Alabama"
+        schema:
+          type: string
+      - in: query
+        name: fields
+        description: Comma delimited list of fields with aggregated annual financial data to return. All values must be entered in UPPERCASE.
+        required: false
+        example: STNAME,YEAR,INTINC,EINTEXP,NIM,NONII,NONIX,ELNATR,ITAXR,IGLSEC,ITAX,EXTRA,NETINC
+        schema:
+          type: string
+      - in: query
+        name: sort_by
+        description: Field name by which to sort returned data. All values must be entered in UPPERCASE.
+        required: false
+        example: YEAR
+        schema:
+          type: string
+          default: YEAR
+      - in: query
+        name: sort_order
+        description: Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE.
+        required: false
+        example: DESC
+        schema:
+          type: string
+          default: ASC
+      - in: query
+        name: limit
+        description: The number of records to return. Default is 10 and maximum is 10,000.
+        required: false
+        example: 10
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 10000
+          default: 10
+      - in: query
+        name: offset
+        description: The offset of page to return.
+        required: false
+        example: 0
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+      - in: query
+        name: agg_by
+        description: The field by which data will be aggregated. All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: agg_term_fields
+        description: The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: agg_sum_fields
+        description: The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: agg_limit
+        description: The limit on how many aggregated results will be displayed.
+        required: false
+        schema:
+          type: integer
+          minimum: 0
+          maximum: 10000
+      - in: query
+        name: max_value
+        description: The field by which the max value is desired.
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: max_value_by
+        description: The field that will be used to determine unique records, similar to a primary key (i.e. CERT). All values must be entered in UPPERCASE.
+        required: false
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fileFormat'
+      - $ref: '#/components/parameters/fileDownload'
+      - $ref: '#/components/parameters/fileName'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    $ref: '#/components/schemas/metadata'
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/summary'
+            text/csv:
+              schema:
+                type: string
+                format: csv
+        '400':
+          description: bad input parameter
+components:
+  parameters:
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv
+  schemas:
+    summary:
+      type: object
+      allOf:
+      - $ref: summary_properties.yaml
+    metadata:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total query result count
+        parameters:
+          type: object
+          description: Query parameters supplied
+        index:
+          type: object
+          properties:
+            name:
+              type: string
+              description: name of index used to retrieve data
+            createTimestamp:
+              type: string
+              format: date-time
+              description: date/time index was created

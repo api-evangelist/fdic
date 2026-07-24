@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  description: API to serve banking industry data to the public.
+  version: 0.1.0
+  title: FDIC Bank Data API (Beta) Demographics API
+  contact:
+    email: PublicDataFeedback@fdic.gov
+servers:
+- description: API to serve banking industry data to the public.
+  url: /banks
+tags:
+- name: Demographics
+  description: Demographics Information
+paths:
+  /demographics:
+    get:
+      tags:
+      - Demographics
+      security:
+      - ApiKeyAuth: []
+      summary: Get Summary of Demographic Information
+      operationId: getDemographics
+      description: Returns summary of demographic information
+      parameters:
+      - in: query
+        name: api_key
+        description: Api key used for api.fdic.gov
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: filters
+        description: 'The filter criteria that refines the records included in the result. All values must be entered in UPPERCASE.
+
+          '
+        example: CERT:14 AND REPDTE:20230630
+        required: false
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fileFormat'
+      - $ref: '#/components/parameters/fileDownload'
+      - $ref: '#/components/parameters/fileName'
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                properties:
+                  meta:
+                    $ref: '#/components/schemas/metadata'
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/demographics'
+                  totals:
+                    $ref: '#/components/schemas/totals'
+            text/csv:
+              schema:
+                type: string
+                format: csv
+        '400':
+          description: Bad input parameter
+components:
+  schemas:
+    totals:
+      type: object
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count
+    demographics:
+      type: object
+      allOf:
+      - $ref: demographics_properties.yaml
+    metadata:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total query result count
+        parameters:
+          type: object
+          description: Query parameters supplied
+        index:
+          type: object
+          properties:
+            name:
+              type: string
+              description: name of index used to retrieve data
+            createTimestamp:
+              type: string
+              format: date-time
+              description: date/time index was created
+  parameters:
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv
