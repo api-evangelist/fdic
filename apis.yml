@@ -8,7 +8,19 @@ description: >
   reports, structure change history, failed banks, and summary deposit data.
   All data is provided free of charge under the U.S. public domain license.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fdic.png
 url: https://raw.githubusercontent.com/api-evangelist/fdic/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -22,32 +34,90 @@ tags:
   - Bank Data
   - Regulatory
 apis:
-  - aid: fdic:bankfind
-    name: FDIC BankFind Suite API
-    description: >
-      The FDIC BankFind Suite API (Beta) provides programmatic access to public
-      data on FDIC-insured financial institutions, including institution
-      demographics and location data, branch office locations, quarterly financial
-      information, historical structure change events, failed institution records
-      dating from 1934 to present, Summary of Deposits data, and aggregate
-      financial summaries subtotaled by year. The API uses Elasticsearch query
-      string syntax for flexible filtering and supports JSON and CSV output
-      formats with pagination up to 10,000 records per request.
-    humanURL: https://banks.data.fdic.gov/bankfind-suite
-    baseURL: https://api.fdic.gov/banks
-    tags:
-      - Banking
-      - Financial Institutions
-      - Bank Data
-      - Branch Locations
-      - Financial Reports
-      - Failed Banks
-      - Deposits
-    properties:
-      - type: Documentation
-        url: https://api.fdic.gov/banks/docs
-      - type: OpenAPI
-        url: https://api.fdic.gov/banks/docs/swagger.yaml
+- aid: fdic:fdic-demographics-api
+  name: FDIC Demographics API
+  description: Demographics Information
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Demographics
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-demographics-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-failures-api
+  name: FDIC Failures API
+  description: List of bank failures to date
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Failures
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-failures-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-financials-api
+  name: FDIC Financials API
+  description: Financial Information
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Financials
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-financials-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-historical-api
+  name: FDIC Historical API
+  description: Historical data from 1934 onward regarding financial institutions.
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Historical
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-historical-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-history-api
+  name: FDIC History API
+  description: List of structure change events
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - History
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-history-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-structure-api
+  name: FDIC Structure API
+  description: Financial institution demographic and location information
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Structure
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-structure-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
+- aid: fdic:fdic-summary-of-deposits-api
+  name: FDIC Summary of Deposits API
+  description: List of Summary of Deposits
+  humanURL: https://banks.data.fdic.gov/bankfind-suite
+  baseURL: https://api.fdic.gov/banks
+  tags:
+  - Summary of Deposits
+  properties:
+  - type: OpenAPI
+    url: openapi/fdic-summary-of-deposits-api-openapi.yml
+  - type: Documentation
+    url: https://api.fdic.gov/banks/docs
 common:
   - type: AgenticAccess
     url: agentic-access/fdic-agentic-access.yml
