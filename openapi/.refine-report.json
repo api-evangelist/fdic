@@ -1,0 +1,26 @@
+{
+  "provider": "fdic",
+  "sources": [
+    "fdic-demographics-api-openapi.yml",
+    "fdic-failures-api-openapi.yml",
+    "fdic-financials-api-openapi.yml",
+    "fdic-historical-api-openapi.yml",
+    "fdic-history-api-openapi.yml",
+    "fdic-structure-api-openapi.yml",
+    "fdic-summary-of-deposits-api-openapi.yml"
+  ],
+  "outputs": [
+    "fdic-demographics-api-openapi.yml",
+    "fdic-failures-api-openapi.yml",
+    "fdic-financials-api-openapi.yml",
+    "fdic-historical-api-openapi.yml",
+    "fdic-history-api-openapi.yml",
+    "fdic-structure-api-openapi.yml",
+    "fdic-summary-of-deposits-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
