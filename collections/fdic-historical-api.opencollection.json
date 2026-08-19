@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FDIC Bank Data API (Beta) Demographics Historical API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Historical",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Historical Aggregate Data by Year",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/banks/summary",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Api key used for api.fdic.gov"
+              },
+              {
+                "name": "filters",
+                "value": "STNAME:\"Alabama\"",
+                "type": "query",
+                "description": "The filter criteria that refines the records included in the calculated result. All values must be entered in UPPERCASE.\nexample: >-\nSTNAME:\"Alabama\" AND YEAR:2005\nExamples:\n* Filter by Community Banks (CB) vs. Savings Institutions (SI)  \n`CB_SI:CB`  \n* Filter by State name  \n`STNAME:\"Virginia\"`    \n* Filter all but a specified value  \n`!(STNAME:\"Virginia\")`  \n* Filter for any one of multiple State names  \n`STNAME:(\"West Virginia\",\"Delaware\")`    \n* Filter data by the year range  \n`YEAR:[\"2015\" TO \"2017\"]`\n"
+              },
+              {
+                "name": "fields",
+                "value": "STNAME,YEAR,INTINC,EINTEXP,NIM,NONII,NONIX,ELNATR,ITAXR,IGLSEC,ITAX,EXTRA,NETINC",
+                "type": "query",
+                "description": "Comma delimited list of fields with aggregated annual financial data to return. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "sort_by",
+                "value": "YEAR",
+                "type": "query",
+                "description": "Field name by which to sort returned data. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "sort_order",
+                "value": "DESC",
+                "type": "query",
+                "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "limit",
+                "value": "10",
+                "type": "query",
+                "description": "The number of records to return. Default is 10 and maximum is 10,000."
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query",
+                "description": "The offset of page to return."
+              },
+              {
+                "name": "agg_by",
+                "value": "",
+                "type": "query",
+                "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_term_fields",
+                "value": "",
+                "type": "query",
+                "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_sum_fields",
+                "value": "",
+                "type": "query",
+                "description": "The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_limit",
+                "value": "",
+                "type": "query",
+                "description": "The limit on how many aggregated results will be displayed."
+              },
+              {
+                "name": "max_value",
+                "value": "",
+                "type": "query",
+                "description": "The field by which the max value is desired."
+              },
+              {
+                "name": "max_value_by",
+                "value": "",
+                "type": "query",
+                "description": "The field that will be used to determine unique records, similar to a primary key (i.e. CERT). All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "The format of the data to return."
+              },
+              {
+                "name": "download",
+                "value": "false",
+                "type": "query",
+                "description": "Whether the data should be downloaded as a file."
+              },
+              {
+                "name": "filename",
+                "value": "data_file",
+                "type": "query",
+                "description": "The filename to use when downloading data."
+              }
+            ]
+          },
+          "docs": "Returns aggregate financial and structure data, subtotaled by year, regarding finanical institutions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,357 @@
+{
+  "item": [
+    {
+      "id": "8adf2211-bdff-4c97-940c-4634c59847b3",
+      "name": "Historical",
+      "description": {
+        "content": "Historical data from 1934 onward regarding financial institutions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "11d7c636-a004-458f-9e5b-2cafdb71951f",
+          "name": "Get Historical Aggregate Data by Year",
+          "request": {
+            "name": "Get Historical Aggregate Data by Year",
+            "description": {
+              "content": "Returns aggregate financial and structure data, subtotaled by year, regarding finanical institutions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "Api key used for api.fdic.gov"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "The filter criteria that refines the records included in the calculated result. All values must be entered in UPPERCASE.\nexample: >-\nSTNAME:\"Alabama\" AND YEAR:2005\nExamples:\n* Filter by Community Banks (CB) vs. Savings Institutions (SI)  \n`CB_SI:CB`  \n* Filter by State name  \n`STNAME:\"Virginia\"`    \n* Filter all but a specified value  \n`!(STNAME:\"Virginia\")`  \n* Filter for any one of multiple State names  \n`STNAME:(\"West Virginia\",\"Delaware\")`    \n* Filter data by the year range  \n`YEAR:[\"2015\" TO \"2017\"]`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma delimited list of fields with aggregated annual financial data to return. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "YEAR",
+                  "description": "Field name by which to sort returned data. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "ASC",
+                  "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "The number of records to return. Default is 10 and maximum is 10,000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset of page to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_by",
+                  "value": "<string>",
+                  "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_term_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_sum_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_limit",
+                  "value": "<integer>",
+                  "description": "The limit on how many aggregated results will be displayed."
+                },
+                {
+                  "disabled": false,
+                  "key": "max_value",
+                  "value": "<string>",
+                  "description": "The field by which the max value is desired."
+                },
+                {
+                  "disabled": false,
+                  "key": "max_value_by",
+                  "value": "<string>",
+                  "description": "The field that will be used to determine unique records, similar to a primary key (i.e. CERT). All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The format of the data to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "download",
+                  "value": "<boolean>",
+                  "description": "Whether the data should be downloaded as a file."
+                },
+                {
+                  "disabled": false,
+                  "key": "filename",
+                  "value": "<string>",
+                  "description": "The filename to use when downloading data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "ff4e879d-a69e-4b0e-a688-43c084f49907",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "STNAME:\"Alabama\""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "STNAME,YEAR,INTINC,EINTEXP,NIM,NONII,NONIX,ELNATR,ITAXR,IGLSEC,ITAX,EXTRA,NETINC"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "max_value",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "max_value_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"total\": 7128,\n    \"parameters\": {},\n    \"index\": {\n      \"name\": \"string\",\n      \"createTimestamp\": \"2026-03-09T12:23:35.120Z\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0c284bc-5a43-4503-83d7-d72030146e75",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "STNAME:\"Alabama\""
+                    },
+                    {
+                      "key": "fields",
+                      "value": "STNAME,YEAR,INTINC,EINTEXP,NIM,NONII,NONIX,ELNATR,ITAXR,IGLSEC,ITAX,EXTRA,NETINC"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "max_value",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "max_value_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/banks",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5bf5963f-7362-48f2-a038-4afbb42bfba9",
+    "name": "FDIC Bank Data API (Beta) Demographics Historical API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API to serve banking industry data to the public.\n\nContact Support:\n Email: PublicDataFeedback@fdic.gov",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FDIC Bank Data API (Beta) Demographics Summary of Deposits API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Summary of Deposits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Summary of Deposits Information for FDIC Insured Institutions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/banks/sod",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Api key used for api.fdic.gov"
+              },
+              {
+                "name": "filters",
+                "value": "CERT:14",
+                "type": "query",
+                "description": "The filter criteria that refines the records included in the result. All values must be entered in UPPERCASE.\nExamples:\n* Filter data by the numeric range\n`ASSET:[1000 TO 9999]`\n"
+              },
+              {
+                "name": "fields",
+                "value": "CERT,YEAR,ASSET,DEPSUMBR,STALPBR",
+                "type": "query",
+                "description": "Comma delimited list of fields with quarterly financial data to return. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "sort_by",
+                "value": "YEAR",
+                "type": "query",
+                "description": "Field name by which to sort returned data. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "sort_order",
+                "value": "DESC",
+                "type": "query",
+                "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "limit",
+                "value": "10",
+                "type": "query",
+                "description": "The number of records to return. Default is 10 and maximum is 10,000."
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query",
+                "description": "The offset of page to return."
+              },
+              {
+                "name": "agg_by",
+                "value": "CERT",
+                "type": "query",
+                "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_term_fields",
+                "value": "YEAR",
+                "type": "query",
+                "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_sum_fields",
+                "value": "ASSET",
+                "type": "query",
+                "description": "The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE."
+              },
+              {
+                "name": "agg_limit",
+                "value": "1",
+                "type": "query",
+                "description": "The limit on how many aggregated results will be displayed"
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "The format of the data to return."
+              },
+              {
+                "name": "download",
+                "value": "false",
+                "type": "query",
+                "description": "Whether the data should be downloaded as a file."
+              },
+              {
+                "name": "filename",
+                "value": "data_file",
+                "type": "query",
+                "description": "The filename to use when downloading data."
+              }
+            ]
+          },
+          "docs": "Returns summary of deposits information for institutions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FDIC Bank Data API (Beta) Demographics API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Demographics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Summary of Demographic Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "/banks/demographics",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Api key used for api.fdic.gov"
+              },
+              {
+                "name": "filters",
+                "value": "CERT:14 AND REPDTE:20230630",
+                "type": "query",
+                "description": "The filter criteria that refines the records included in the result. All values must be entered in UPPERCASE.\n"
+              },
+              {
+                "name": "format",
+                "value": "json",
+                "type": "query",
+                "description": "The format of the data to return."
+              },
+              {
+                "name": "download",
+                "value": "false",
+                "type": "query",
+                "description": "Whether the data should be downloaded as a file."
+              },
+              {
+                "name": "filename",
+                "value": "data_file",
+                "type": "query",
+                "description": "The filename to use when downloading data."
+              }
+            ]
+          },
+          "docs": "Returns summary of demographic information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

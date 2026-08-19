@@ -1,0 +1,329 @@
+{
+  "item": [
+    {
+      "id": "9a38ec31-3a73-4efc-9744-0fd13fc58afa",
+      "name": "Summary of Deposits",
+      "description": {
+        "content": "List of Summary of Deposits",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e4b0f112-ab47-4088-9ccf-b99b52709159",
+          "name": "Get Summary of Deposits Information for FDIC Insured Institutions",
+          "request": {
+            "name": "Get Summary of Deposits Information for FDIC Insured Institutions",
+            "description": {
+              "content": "Returns summary of deposits information for institutions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sod"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "Api key used for api.fdic.gov"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "The filter criteria that refines the records included in the result. All values must be entered in UPPERCASE.\nExamples:\n* Filter data by the numeric range\n`ASSET:[1000 TO 9999]`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma delimited list of fields with quarterly financial data to return. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "YEAR",
+                  "description": "Field name by which to sort returned data. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "ASC",
+                  "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "The number of records to return. Default is 10 and maximum is 10,000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset of page to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_by",
+                  "value": "<string>",
+                  "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_term_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_sum_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_limit",
+                  "value": "<integer>",
+                  "description": "The limit on how many aggregated results will be displayed"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The format of the data to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "download",
+                  "value": "<boolean>",
+                  "description": "Whether the data should be downloaded as a file."
+                },
+                {
+                  "disabled": false,
+                  "key": "filename",
+                  "value": "<string>",
+                  "description": "The filename to use when downloading data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "543a13a9-5f11-479a-b429-964a288e89a2",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "CERT:14"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "CERT,YEAR,ASSET,DEPSUMBR,STALPBR"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "CERT"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "ASSET"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"total\": 2192,\n    \"parameters\": {},\n    \"index\": {\n      \"name\": \"string\",\n      \"createTimestamp\": \"2011-08-26T10:16:34.916Z\"\n    }\n  },\n  \"totals\": {\n    \"count\": 91\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e26035c-0ae7-44b6-9f5e-9dbb097eced5",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sod"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "CERT:14"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "CERT,YEAR,ASSET,DEPSUMBR,STALPBR"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "CERT"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "YEAR"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "ASSET"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "1"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/banks",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fc64957d-7e58-4a22-94eb-c0894522bcd4",
+    "name": "FDIC Bank Data API (Beta) Demographics Summary of Deposits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API to serve banking industry data to the public.\n\nContact Support:\n Email: PublicDataFeedback@fdic.gov",
+      "type": "text/plain"
+    }
+  }
+}

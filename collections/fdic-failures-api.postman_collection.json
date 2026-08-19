@@ -1,0 +1,357 @@
+{
+  "item": [
+    {
+      "id": "7e4c6492-148a-4703-9be0-a857dd3e89fc",
+      "name": "Failures",
+      "description": {
+        "content": "List of bank failures to date",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1b4dafc-5ed3-467f-9a73-371b3dd8e0c8",
+          "name": "Get detail on historical bank failures from 1934 to present.",
+          "request": {
+            "name": "Get detail on historical bank failures from 1934 to present.",
+            "description": {
+              "content": "Returns details on failed financial institutions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "failures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "Api key used for api.fdic.gov"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "The filter criteria that refines the records returned. \nExamples: All values must be entered in UPPERCASE.\n* Filter by Location              \n`CITYST:\"MEMPHIS, TN\"`  \n* Filter all but a specified value  \n`!(CITY:\"PITTSBURGH\")`  \n* Filter by institution fail year range  \n`FAILYR:[\"2015\" TO \"2016\"]`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma delimited list of fields of failed financial institutions to return. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "FAILDATE",
+                  "description": "Field name by which to sort returned data. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "ASC",
+                  "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "The number of records to return. Default is 10 and maximum is 10,000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset of page to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "total_fields",
+                  "value": "<string>",
+                  "description": "Fields to sum up (in a totals response object). Only numeric columns are valid. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtotal_by",
+                  "value": "<string>",
+                  "description": "The field by which data will be subtotaled (in totals response object). Only categorical values should be used. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_by",
+                  "value": "<string>",
+                  "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_term_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_sum_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be summed or aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_limit",
+                  "value": "10",
+                  "description": "The limit on how many aggregated results will be displayed"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The format of the data to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "download",
+                  "value": "<boolean>",
+                  "description": "Whether the data should be downloaded as a file."
+                },
+                {
+                  "disabled": false,
+                  "key": "filename",
+                  "value": "<string>",
+                  "description": "The filename to use when downloading data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "97bacaa3-3c03-4c47-aae1-79308945294f",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "failures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "FAILYR:[\"2014\" TO \"2015\"]"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "NAME,CERT,FIN,CITYST,FAILDATE,SAVR,RESTYPE,RESTYPE1,QBFDEP,QBFASSET,COST"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "FAILDATE"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "total_fields",
+                      "value": "QBFDEP,QBFASSET,COST"
+                    },
+                    {
+                      "key": "subtotal_by",
+                      "value": "RESTYPE"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "FAILYR"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "RESTYPE"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "QBFASSET,QBFDEP,COST"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"total\": 1242,\n    \"parameters\": {},\n    \"index\": {\n      \"name\": \"string\",\n      \"createTimestamp\": \"2007-02-20T14:14:47.747Z\"\n    }\n  },\n  \"totals\": {\n    \"count\": 9961\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a79dc3d-594a-4776-8715-1d15dca6ec0d",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "failures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "FAILYR:[\"2014\" TO \"2015\"]"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "NAME,CERT,FIN,CITYST,FAILDATE,SAVR,RESTYPE,RESTYPE1,QBFDEP,QBFASSET,COST"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "FAILDATE"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "total_fields",
+                      "value": "QBFDEP,QBFASSET,COST"
+                    },
+                    {
+                      "key": "subtotal_by",
+                      "value": "RESTYPE"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "FAILYR"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "RESTYPE"
+                    },
+                    {
+                      "key": "agg_sum_fields",
+                      "value": "QBFASSET,QBFDEP,COST"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/banks",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5b2c724f-b313-40f4-afa4-57c116f0006c",
+    "name": "FDIC Bank Data API (Beta) Demographics Failures API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API to serve banking industry data to the public.\n\nContact Support:\n Email: PublicDataFeedback@fdic.gov",
+      "type": "text/plain"
+    }
+  }
+}

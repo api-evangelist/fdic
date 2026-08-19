@@ -1,0 +1,203 @@
+{
+  "item": [
+    {
+      "id": "8ddafbd4-a1f6-4623-aa95-bb34ea2cafe9",
+      "name": "Demographics",
+      "description": {
+        "content": "Demographics Information",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "212231fb-e7f4-4db0-a5c1-7634803248dd",
+          "name": "Get Summary of Demographic Information",
+          "request": {
+            "name": "Get Summary of Demographic Information",
+            "description": {
+              "content": "Returns summary of demographic information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "demographics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "Api key used for api.fdic.gov"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "The filter criteria that refines the records included in the result. All values must be entered in UPPERCASE.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The format of the data to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "download",
+                  "value": "<boolean>",
+                  "description": "Whether the data should be downloaded as a file."
+                },
+                {
+                  "disabled": false,
+                  "key": "filename",
+                  "value": "<string>",
+                  "description": "The filename to use when downloading data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "1fdb725b-ad63-40b1-b5e1-a61a43eabbb1",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "demographics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "CERT:14 AND REPDTE:20230630"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"total\": 2042,\n    \"parameters\": {},\n    \"index\": {\n      \"name\": \"string\",\n      \"createTimestamp\": \"1996-08-24T10:49:44.136Z\"\n    }\n  },\n  \"totals\": {\n    \"count\": 374\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "354dbefd-5721-4281-8f80-d79148913748",
+              "name": "Bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "demographics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "CERT:14 AND REPDTE:20230630"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/banks",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "581e72fc-401f-49ef-bd1b-a4a36f662560",
+    "name": "FDIC Bank Data API (Beta) Demographics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API to serve banking industry data to the public.\n\nContact Support:\n Email: PublicDataFeedback@fdic.gov",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "item": [
+    {
+      "id": "82c002af-1110-4bc3-9247-924d7cf3813f",
+      "name": "History",
+      "description": {
+        "content": "List of structure change events",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1aab9031-cea7-429e-ad0e-591b33ad2cf1",
+          "name": "Get Detail on Structure Change Events",
+          "request": {
+            "name": "Get Detail on Structure Change Events",
+            "description": {
+              "content": "Returns details on structure change events",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "Api key used for api.fdic.gov"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "The filter criteria that refines the records returned. All values must be entered in UPPERCASE.\nExamples:\n* Filter by State\n`STATE:\"VIRGINIA\"`  \n* Filter all but a specified value  \n`!(STATE:\"VIRGINIA\")`  \n* Filter by Date Range\n`PROCDATE:[2020-01-01 TO 2020-02-01]`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Flexible text search against institution records\nSearch supports text search and fuzzy matching, as opposed to filters that are exact matches. All values must be entered in UPPERCASE.\nExamples:\n* Search by Name\n`NAME: Island`\n* Search by Name (fuzzy match)\n`NAME: Iland`\n* Search by State\n`STATE: VA`\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma delimited list of fields of failed financial institutions to return. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "PROCDATE",
+                  "description": "Field name by which to sort returned data"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "ASC",
+                  "description": "Indicator if ascending (ASC) or descending (DESC). All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "The number of records to return. Default is 10 and maximum is 10,000."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "The offset of page to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_by",
+                  "value": "<string>",
+                  "description": "The field by which data will be aggregated. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_term_fields",
+                  "value": "<string>",
+                  "description": "The field(s) for which aggregations will be counted for each unique term. All values must be entered in UPPERCASE."
+                },
+                {
+                  "disabled": false,
+                  "key": "agg_limit",
+                  "value": "10",
+                  "description": "The limit on how many aggregated results will be displayed"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "<string>",
+                  "description": "The format of the data to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "download",
+                  "value": "<boolean>",
+                  "description": "Whether the data should be downloaded as a file."
+                },
+                {
+                  "disabled": false,
+                  "key": "filename",
+                  "value": "<string>",
+                  "description": "The filename to use when downloading data."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "id": "c0fcba70-dfe3-489a-8920-16995763a053",
+              "name": "Successful Operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "STATE:\"VIRGINIA\""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "INSTNAME,CERT,PCITY,PSTALP,PZIP5"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "PROCDATE"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"total\": 3688,\n    \"parameters\": {},\n    \"index\": {\n      \"name\": \"string\",\n      \"createTimestamp\": \"1972-12-19T22:54:16.029Z\"\n    }\n  },\n  \"totals\": {\n    \"count\": 5772\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ca4066e-1dd3-4224-aaf9-44b941db0031",
+              "name": "bad input parameter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "STATE:\"VIRGINIA\""
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "INSTNAME,CERT,PCITY,PSTALP,PZIP5"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "PROCDATE"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "agg_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_term_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "agg_limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "download",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filename",
+                      "value": "data_file"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/banks",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1663c12-6d58-41a6-9351-978abb16a4d8",
+    "name": "FDIC Bank Data API (Beta) Demographics History API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API to serve banking industry data to the public.\n\nContact Support:\n Email: PublicDataFeedback@fdic.gov",
+      "type": "text/plain"
+    }
+  }
+}
