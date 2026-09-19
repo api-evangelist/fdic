@@ -76,6 +76,8 @@ apis:
   humanURL: https://banks.data.fdic.gov/bankfind-suite
   baseURL: https://api.fdic.gov/banks
   tags:
+  - Financial
+  tags_raw:
   - Financials
   properties:
   - type: OpenAPI
