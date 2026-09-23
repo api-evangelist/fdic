@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: API to serve banking industry data to the public.
   version: 0.1.0
-  title: FDIC Bank Data API (Beta) Demographics Structure API
+  title: FDIC Bank Data API (Beta) Structure API
   contact:
     email: PublicDataFeedback@fdic.gov
 servers:
@@ -211,14 +211,6 @@ paths:
           description: bad input parameter
 components:
   schemas:
-    institution:
-      type: object
-      allOf:
-      - $ref: institution_properties.yaml
-    location:
-      type: object
-      allOf:
-      - $ref: location_properties.yaml
     metadata:
       type: object
       properties:
@@ -238,15 +230,15 @@ components:
               type: string
               format: date-time
               description: date/time index was created
+    institution:
+      type: object
+      allOf:
+      - $ref: institution_properties.yaml
+    location:
+      type: object
+      allOf:
+      - $ref: location_properties.yaml
   parameters:
-    fileName:
-      in: query
-      name: filename
-      description: The filename to use when downloading data.
-      required: false
-      example: data_file
-      schema:
-        type: string
     fileDownload:
       in: query
       name: download
@@ -269,3 +261,11 @@ components:
         enum:
         - json
         - csv
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string

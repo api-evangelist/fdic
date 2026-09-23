@@ -1,13 +1,7 @@
 {
   "provider": "fdic",
   "sources": [
-    "fdic-demographics-api-openapi.yml",
-    "fdic-failures-api-openapi.yml",
-    "fdic-financials-api-openapi.yml",
-    "fdic-historical-api-openapi.yml",
-    "fdic-history-api-openapi.yml",
-    "fdic-structure-api-openapi.yml",
-    "fdic-summary-of-deposits-api-openapi.yml"
+    "_original/fdic-bankfind-openapi.yml"
   ],
   "outputs": [
     "fdic-demographics-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fdic-bankfind-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fdic-demographics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-failures-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-financials-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-historical-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-structure-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fdic-summary-of-deposits-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

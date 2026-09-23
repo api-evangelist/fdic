@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   description: API to serve banking industry data to the public.
   version: 0.1.0
@@ -63,17 +63,6 @@ paths:
           description: Bad input parameter
 components:
   schemas:
-    totals:
-      type: object
-      description: Total and subtotal data (additional properties based on fields selected)
-      properties:
-        count:
-          type: integer
-          description: Total result count
-    demographics:
-      type: object
-      allOf:
-      - $ref: demographics_properties.yaml
     metadata:
       type: object
       properties:
@@ -93,15 +82,18 @@ components:
               type: string
               format: date-time
               description: date/time index was created
+    totals:
+      type: object
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count
+    demographics:
+      type: object
+      allOf:
+      - $ref: demographics_properties.yaml
   parameters:
-    fileName:
-      in: query
-      name: filename
-      description: The filename to use when downloading data.
-      required: false
-      example: data_file
-      schema:
-        type: string
     fileDownload:
       in: query
       name: download
@@ -124,3 +116,11 @@ components:
         enum:
         - json
         - csv
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
