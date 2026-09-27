@@ -133,6 +133,17 @@ paths:
           description: bad input parameter
 components:
   schemas:
+    totals:
+      type: object
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count
+    financial:
+      type: object
+      allOf:
+      - $ref: risview_properties.yaml
     metadata:
       type: object
       properties:
@@ -152,29 +163,7 @@ components:
               type: string
               format: date-time
               description: date/time index was created
-    financial:
-      type: object
-      allOf:
-      - $ref: risview_properties.yaml
-    totals:
-      type: object
-      description: Total and subtotal data (additional properties based on fields selected)
-      properties:
-        count:
-          type: integer
-          description: Total result count
   parameters:
-    fileDownload:
-      in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
-      required: false
-      example: false
-      schema:
-        type: boolean
-        enum:
-        - false
-        - true
     fileFormat:
       in: query
       name: format
@@ -186,6 +175,17 @@ components:
         enum:
         - json
         - csv
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
     fileName:
       in: query
       name: filename

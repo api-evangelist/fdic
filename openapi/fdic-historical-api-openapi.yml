@@ -139,7 +139,42 @@ paths:
         '400':
           description: bad input parameter
 components:
+  parameters:
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
   schemas:
+    summary:
+      type: object
+      allOf:
+      - $ref: summary_properties.yaml
     metadata:
       type: object
       properties:
@@ -159,38 +194,3 @@ components:
               type: string
               format: date-time
               description: date/time index was created
-    summary:
-      type: object
-      allOf:
-      - $ref: summary_properties.yaml
-  parameters:
-    fileDownload:
-      in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
-      required: false
-      example: false
-      schema:
-        type: boolean
-        enum:
-        - false
-        - true
-    fileFormat:
-      in: query
-      name: format
-      description: The format of the data to return.
-      required: false
-      example: json
-      schema:
-        type: string
-        enum:
-        - json
-        - csv
-    fileName:
-      in: query
-      name: filename
-      description: The filename to use when downloading data.
-      required: false
-      example: data_file
-      schema:
-        type: string

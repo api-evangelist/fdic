@@ -63,6 +63,10 @@ paths:
           description: Bad input parameter
 components:
   schemas:
+    demographics:
+      type: object
+      allOf:
+      - $ref: demographics_properties.yaml
     metadata:
       type: object
       properties:
@@ -89,22 +93,7 @@ components:
         count:
           type: integer
           description: Total result count
-    demographics:
-      type: object
-      allOf:
-      - $ref: demographics_properties.yaml
   parameters:
-    fileDownload:
-      in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
-      required: false
-      example: false
-      schema:
-        type: boolean
-        enum:
-        - false
-        - true
     fileFormat:
       in: query
       name: format
@@ -116,6 +105,17 @@ components:
         enum:
         - json
         - csv
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
     fileName:
       in: query
       name: filename

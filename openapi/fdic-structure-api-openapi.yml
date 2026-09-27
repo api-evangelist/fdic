@@ -211,6 +211,14 @@ paths:
           description: bad input parameter
 components:
   schemas:
+    location:
+      type: object
+      allOf:
+      - $ref: location_properties.yaml
+    institution:
+      type: object
+      allOf:
+      - $ref: institution_properties.yaml
     metadata:
       type: object
       properties:
@@ -230,26 +238,7 @@ components:
               type: string
               format: date-time
               description: date/time index was created
-    institution:
-      type: object
-      allOf:
-      - $ref: institution_properties.yaml
-    location:
-      type: object
-      allOf:
-      - $ref: location_properties.yaml
   parameters:
-    fileDownload:
-      in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
-      required: false
-      example: false
-      schema:
-        type: boolean
-        enum:
-        - false
-        - true
     fileFormat:
       in: query
       name: format
@@ -261,6 +250,17 @@ components:
         enum:
         - json
         - csv
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
     fileName:
       in: query
       name: filename
