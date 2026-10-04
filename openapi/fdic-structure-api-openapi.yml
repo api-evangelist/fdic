@@ -211,17 +211,14 @@ paths:
           description: bad input parameter
 components:
   parameters:
-    fileDownload:
+    fileName:
       in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
+      name: filename
+      description: The filename to use when downloading data.
       required: false
-      example: false
+      example: data_file
       schema:
-        type: boolean
-        enum:
-        - false
-        - true
+        type: string
     fileFormat:
       in: query
       name: format
@@ -233,15 +230,22 @@ components:
         enum:
         - json
         - csv
-    fileName:
+    fileDownload:
       in: query
-      name: filename
-      description: The filename to use when downloading data.
+      name: download
+      description: Whether the data should be downloaded as a file.
       required: false
-      example: data_file
+      example: false
       schema:
-        type: string
+        type: boolean
+        enum:
+        - false
+        - true
   schemas:
+    location:
+      type: object
+      allOf:
+      - $ref: location_properties.yaml
     metadata:
       type: object
       properties:
@@ -265,7 +269,3 @@ components:
       type: object
       allOf:
       - $ref: institution_properties.yaml
-    location:
-      type: object
-      allOf:
-      - $ref: location_properties.yaml
