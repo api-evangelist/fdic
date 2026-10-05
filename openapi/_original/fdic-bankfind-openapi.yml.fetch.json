@@ -1,0 +1,12 @@
+{
+ "url": "https://api.fdic.gov/banks/docs/swagger.yaml",
+ "requested_url": "https://api.fdic.gov/banks/docs/swagger.yaml",
+ "status": 200,
+ "content_type": "text/yaml; charset=UTF-8",
+ "bytes": 34749,
+ "sha256": "854500ae68d77185a12fc9260e0bbc0194e3848df0e54086f828656ea508852b",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
