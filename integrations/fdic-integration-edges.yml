@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/fdic/integrations
+- https://n8n.io/integrations/fdic/
+- https://composio.dev/toolkits/fdic
+- https://monid.ai/tools/fdic
+checked:
+- https://composio.dev/toolkits/fdic
+- https://monid.ai/tools/fdic
+- https://n8n.io/integrations/fdic/
+- https://zapier.com/apps/fdic/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
