@@ -141,17 +141,6 @@ components:
       example: data_file
       schema:
         type: string
-    fileFormat:
-      in: query
-      name: format
-      description: The format of the data to return.
-      required: false
-      example: json
-      schema:
-        type: string
-        enum:
-        - json
-        - csv
     fileDownload:
       in: query
       name: download
@@ -163,14 +152,22 @@ components:
         enum:
         - false
         - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv
   schemas:
-    totals:
+    financial:
       type: object
-      description: Total and subtotal data (additional properties based on fields selected)
-      properties:
-        count:
-          type: integer
-          description: Total result count
+      allOf:
+      - $ref: risview_properties.yaml
     metadata:
       type: object
       properties:
@@ -190,7 +187,10 @@ components:
               type: string
               format: date-time
               description: date/time index was created
-    financial:
+    totals:
       type: object
-      allOf:
-      - $ref: risview_properties.yaml
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count

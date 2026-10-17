@@ -148,45 +148,11 @@ paths:
         '400':
           description: bad input parameter
 components:
-  parameters:
-    fileName:
-      in: query
-      name: filename
-      description: The filename to use when downloading data.
-      required: false
-      example: data_file
-      schema:
-        type: string
-    fileFormat:
-      in: query
-      name: format
-      description: The format of the data to return.
-      required: false
-      example: json
-      schema:
-        type: string
-        enum:
-        - json
-        - csv
-    fileDownload:
-      in: query
-      name: download
-      description: Whether the data should be downloaded as a file.
-      required: false
-      example: false
-      schema:
-        type: boolean
-        enum:
-        - false
-        - true
   schemas:
-    totals:
+    history:
       type: object
-      description: Total and subtotal data (additional properties based on fields selected)
-      properties:
-        count:
-          type: integer
-          description: Total result count
+      allOf:
+      - $ref: history_properties.yaml
     metadata:
       type: object
       properties:
@@ -206,7 +172,41 @@ components:
               type: string
               format: date-time
               description: date/time index was created
-    history:
+    totals:
       type: object
-      allOf:
-      - $ref: history_properties.yaml
+      description: Total and subtotal data (additional properties based on fields selected)
+      properties:
+        count:
+          type: integer
+          description: Total result count
+  parameters:
+    fileName:
+      in: query
+      name: filename
+      description: The filename to use when downloading data.
+      required: false
+      example: data_file
+      schema:
+        type: string
+    fileDownload:
+      in: query
+      name: download
+      description: Whether the data should be downloaded as a file.
+      required: false
+      example: false
+      schema:
+        type: boolean
+        enum:
+        - false
+        - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv

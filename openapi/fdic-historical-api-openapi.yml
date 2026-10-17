@@ -148,17 +148,6 @@ components:
       example: data_file
       schema:
         type: string
-    fileFormat:
-      in: query
-      name: format
-      description: The format of the data to return.
-      required: false
-      example: json
-      schema:
-        type: string
-        enum:
-        - json
-        - csv
     fileDownload:
       in: query
       name: download
@@ -170,6 +159,17 @@ components:
         enum:
         - false
         - true
+    fileFormat:
+      in: query
+      name: format
+      description: The format of the data to return.
+      required: false
+      example: json
+      schema:
+        type: string
+        enum:
+        - json
+        - csv
   schemas:
     summary:
       type: object
