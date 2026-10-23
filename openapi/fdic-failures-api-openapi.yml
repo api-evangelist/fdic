@@ -209,3 +209,9 @@ components:
       type: object
       allOf:
       - $ref: failure_properties.yaml
+x-provenance:
+  method: harvested
+  publisher: FDIC
+  source: https://api.fdic.gov/banks/docs/swagger.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
