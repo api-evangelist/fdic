@@ -64,33 +64,163 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Federal Deposit Insurance Corporation APIs.json provider profile for the BankFind Suite REST API.
+The Federal Deposit Insurance Corporation (FDIC) provides the BankFind Suite REST API, offering developers programmatic access to publicly available data on FDIC-insured financial institutions. The API enables searching, filtering, and downloading information about bank institutions, branch locations, financial reports, structure change history, failed banks, and summary deposit data. All data is provided free of charge under the U.S. public domain license.
 
-## BankFind Suite API
+**Areas:** Banking · Finance · Government · FDIC · Financial Data · Bank Data · Regulatory
 
-The FDIC BankFind Suite API provides programmatic access to publicly available data on FDIC-insured financial institutions. The API covers:
+## FDIC on APIs.io
 
-- **Institutions** - Financial institution demographic and location data
-- **Locations** - Branch office location information
-- **Financials** - Quarterly financial reports for FDIC-insured institutions
-- **History** - Structure change events for institutions
-- **Failures** - Failed institution records from 1934 to present
-- **Summary** - Historic aggregate financial data subtotaled by year
-- **Summary of Deposits (SOD)** - Deposit data for FDIC-insured institutions
-- **Demographics** - Summary demographic information
+Everything profiled for FDIC is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fdic/](https://apis.io/providers/fdic/)** — or go straight to one of the APIs or properties below.
 
-## Access
+### APIs (7)
 
-- **Documentation:** https://api.fdic.gov/banks/docs
-- **OpenAPI Spec:** https://api.fdic.gov/banks/docs/swagger.yaml
-- **BankFind Suite Portal:** https://banks.data.fdic.gov/bankfind-suite
-- **Bulk Data Downloads:** https://banks.data.fdic.gov/bankfind-suite/bulkData
+- [FDIC Demographics API](https://apis.io/apis/fdic/fdic-demographics-api/) — Demographics Information
+- [FDIC Failures API](https://apis.io/apis/fdic/fdic-failures-api/) — List of bank failures to date
+- [FDIC Financials API](https://apis.io/apis/fdic/fdic-financials-api/) — Financial Information
+- [FDIC Historical API](https://apis.io/apis/fdic/fdic-historical-api/) — Historical data from 1934 onward regarding financial institutions.
+- [FDIC History API](https://apis.io/apis/fdic/fdic-history-api/) — List of structure change events
+- [FDIC Structure API](https://apis.io/apis/fdic/fdic-structure-api/) — Financial institution demographic and location information
+- [FDIC Summary of Deposits API](https://apis.io/apis/fdic/fdic-summary-of-deposits-api/) — List of Summary of Deposits
 
-## Cost
+### Published properties
 
-Free. No registration required. All data is public domain under https://www.usa.gov/publicdomain/label/1.0/.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Contact
+#### Agentic access (1)
 
-- General feedback: PublicDataFeedback@fdic.gov
-- Chief Data Officer: ChiefDataOfficer@fdic.gov
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Fdic Agentic Access](https://apis.io/agentic-access/fdic/fdic-agentic-access/)
+
+#### JSON Schema (4)
+
+The data models the API reads and writes.
+
+- [FDIC Bank Failure](https://apis.io/schemas/fdic/fdic-failure/)
+- [FDIC Financial Report](https://apis.io/schemas/fdic/fdic-financial/)
+- [FDIC Institution](https://apis.io/schemas/fdic/fdic-institution/)
+- [FDIC Institution Location](https://apis.io/schemas/fdic/fdic-location/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Fdic Context](https://apis.io/jsonld/fdic/fdic-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [FDIC BankFind Suite Vocabulary](https://apis.io/vocabularies/fdic/fdic-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Fdic Failure Example](https://apis.io/examples/fdic/fdic-failure-example/)
+- [Fdic Financials Example](https://apis.io/examples/fdic/fdic-financials-example/)
+- [Fdic Institution Example](https://apis.io/examples/fdic/fdic-institution-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [FDIC Bank Data API (Beta) Demographics API](https://apis.io/collections/fdic/open-fdic-demographics-api/)
+- [FDIC Bank Data API (Beta) Demographics Failures API](https://apis.io/collections/fdic/open-fdic-failures-api/)
+- [FDIC Bank Data API (Beta) Demographics Financials API](https://apis.io/collections/fdic/open-fdic-financials-api/)
+- [FDIC Bank Data API (Beta) Demographics Historical API](https://apis.io/collections/fdic/open-fdic-historical-api/)
+- [FDIC Bank Data API (Beta) Demographics History API](https://apis.io/collections/fdic/open-fdic-history-api/)
+- [FDIC Bank Data API (Beta) Demographics Structure API](https://apis.io/collections/fdic/open-fdic-structure-api/)
+- [FDIC Bank Data API (Beta) Demographics Summary of Deposits API](https://apis.io/collections/fdic/open-fdic-summary-of-deposits-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [FDIC — jsonschema rules](https://apis.io/rules/fdic/fdic-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Fdic Domain Security](https://apis.io/security/fdic/fdic-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Fdic Plans Pricing](https://apis.io/plans/fdic/fdic-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Fdic Rate Limits](https://apis.io/rate-limits/fdic/fdic-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Fdic Finops](https://apis.io/finops/fdic/fdic-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.fdic.gov/)
+- [Documentation](https://api.fdic.gov/banks/docs)
+- [Pricing](https://api.fdic.gov/banks/docs)
+- [Blog](https://www.fdic.gov/news)
+
+## API Evangelist rating
+
+**Kin Score 26.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 52.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 15.8 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 8.7** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fdic/](https://apis.io/providers/fdic/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FDIC: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fdic/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
